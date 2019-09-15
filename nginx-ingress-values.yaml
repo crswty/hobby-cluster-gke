@@ -1,0 +1,15 @@
+rbac:
+  create: true
+controller:
+  service:
+    enabled: false
+  hostNetwork: true
+  publishService:
+    enabled: true
+  tolerations:
+  - key: type
+    operator: Equal
+    value: ingress
+    effect: NoSchedule
+  nodeSelector:
+    type: ingress
